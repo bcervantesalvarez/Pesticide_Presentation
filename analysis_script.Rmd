@@ -19,84 +19,87 @@ library(reReg)
 library(KMsurv)
 library(Ecdat)
 
-ds=read_csv("./data/aquaticToxic.csv")
+ds = read_csv("./data/aquaticToxic.csv")
 
 ```
 
+## Data Overview
+```{r message=FALSE, warning=FALSE}
+#Pesticide Names
+unique(ds$pesticide)
+
+#Total Number of Observations
+nrow(ds)
+
+#Number of Observations Per Pesticide
+length(unique(ds$id))
+
+```
+## 
+
+```{r message=FALSE, warning=FALSE}
+#Pesticide Names
+unique(ds$pesticide)
+
+#Total Number of Observations
+nrow(ds)
+
+#Number of Observations Per Pesticide
+length(unique(ds$id))
+
+```
+
+
+
 ## KM Survival Curves for Pesticides 
 
-#Pesticide = azoxystrobin
-```{r}
+### Pesticide = azoxystrobin
+```{r message=FALSE, warning=FALSE}
 at1 = ds %>% 
   filter(pesticide == "azoxystrobin")
 ```
 
 ```{r}
 at1sf = survfit(Surv(at1$TTKD, at1$status)~at1$temp) 
-ggsurvplot(fit = at1sf, data = at1, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata", surv.median.line="hv") +
-  labs(Title = "Survival Rate with Pesticide azoxystrobin", 
-       x = "Time in Hours")
 
-survdiff(Surv(at1$TTKD, at1$status)~at1$temp)
+ggsurvplot(fit = at1sf, 
+           data = at1, 
+           legend = "bottom", 
+           risk.table = F, 
+           conf.int = F,
+           linetype = "strata") +
+  labs(title = "Survival Rate with Pesticide azoxystrobin",
+       x = "Survival Time (Hrs)")
 ```
-#Pesticide = carbaryl
-```{r}
+
+### Pesticide = carbaryl
+```{r message=FALSE, warning=FALSE}
 at2 = ds %>%
   filter(pesticide == "carbaryl")
 
 at2sf = survfit(Surv(at2$TTKD, at2$status)~at2$temp) 
-ggsurvplot(fit = at2sf, data = at2, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata", surv.median.line="hv") +
-  labs(Title = "Survival Rate with carbaryl", 
-       x = "Time in Hours")
-
-survdiff(Surv(at2$TTKD, at2$status)~at2$temp)
+ggsurvplot(fit = at2sf, 
+           data = at2, 
+           legend = "bottom", 
+           risk.table = F, 
+           conf.int = F,
+           linetype = "strata") +
+  labs(title = "Survival Rate with carbaryl",
+       x = "Survival Time (Hrs)")
 ```
 
-#Pesticide = atrazine
-```{r}
+### Pesticide = atrazine
+```{r message=FALSE, warning=FALSE}
 at3 = ds %>%
   filter(pesticide == "atrazine")
 
 at3sf = survfit(Surv(at3$TTKD, at3$status)~at3$temp) 
-ggsurvplot(fit = at3sf, data = at3, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata", surv.median.line="hv") +
-  labs(Title = "Survival Rate with atrazine", 
-       x = "Time in Hours")
-
-survdiff(Surv(at3$TTKD, at3$status)~at3$temp)
-```
-##Temperature Analysis
-#Temp = 18
-```{r}
-temp18 = ds %>%
-  filter(temp == 18)
-
-ggsurvplot(fit= survfit(Surv(temp18$TTKD, temp18$status)~temp18$pesticide), data = temp18, surv.median.line="hv") +
-  labs(Title = "Survival Plot Temperature is 18", 
-       x = "Time in Hours")
-
-survdiff(Surv(temp18$TTKD, temp18$status)~temp18$pesticide)
-```
-#Temp = 24
-```{r}
-temp24 = ds %>%
-  filter(temp == 24)
-
-ggsurvplot(fit= survfit(Surv(temp24$TTKD, temp24$status)~temp24$pesticide), data = temp24, surv.median.line="hv") +
-  labs(Title = "Survival Plot Temperature is 24", 
-       x = "Time in Hours")
-
-survdiff(Surv(temp24$TTKD, temp24$status)~temp24$pesticide)
-```
-
-#Temp = 30 
-```{r}
-temp30 = ds %>%
-  filter(temp == 30)
-
-ggsurvplot(fit= survfit(Surv(temp30$TTKD, temp30$status)~temp30$pesticide), data = temp30, surv.median.line="hv") +
-  labs(Title = "Survival Plot Temperature is 30", 
-       x = "Time in Hours")
-
-survdiff(Surv(temp30$TTKD, temp30$status)~temp30$pesticide)
+ggsurvplot(fit = at3sf, 
+           data = at3, 
+           legend = "bottom", 
+           risk.table = F,
+           conf.int = F,
+           linetype = "strata") +
+  labs(title = "Survival Rate with atrazine")
 ```
 
