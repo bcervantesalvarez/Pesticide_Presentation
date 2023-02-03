@@ -90,6 +90,7 @@ ggsurvplot(fit = at3sf,
            risk.table = F,
            conf.int = F,
            linetype = "strata") +
-  labs(title = "Survival Rate with atrazine")
+  labs(title = "Survival Rate with atrazine",
+       x = "Surival Time (Hrs)")
 ```
 
