@@ -8,7 +8,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_knit$set(root.dir = "C:/Users/klgor/OneDrive/Documents/Willamette University Classes/DATA 599 - Survival analysis/Survival Datasets")
+knitr::opts_knit$set(root.dir = "./data")
 
 library(tidyverse)
 library(lubridate)
@@ -18,10 +18,12 @@ library(survminer)
 library(reReg)
 library(KMsurv)
 library(Ecdat)
+
+ds=read_csv("./data/aquaticToxic.csv")
+
 ```
 
 ```{r}
-ds=read_csv("../Datasets/pharmacoSmoking-asaur.txt")
 
 ds=ds %>%
     select(id,grp,ageGroup2,ttr,relapse)
@@ -38,5 +40,36 @@ ggsurvplot(fit=km.strata, data=ds,
 survdiff(Surv(ds$ttr,ds$relapse)~ds$grp + (ds$ageGroup2))
 ```
 
-##
+## KM Survival Curves for Pesticides 
+
+#Pesticide = azoxystrobin
+```{r}
+at1 = ds %>% 
+  filter(pesticide == "azoxystrobin")
+```
+
+```{r}
+at1sf = survfit(Surv(at1$TTKD, at1$status)~at1$temp) 
+ggsurvplot(fit = at1sf, data = at1, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata") +
+  labs(Title = "Survival Rate with Pesticide azoxystrobin")
+```
+#Pesticide = carbaryl
+```{r}
+at2 = ds %>%
+  filter(pesticide == "carbaryl")
+
+at2sf = survfit(Surv(at2$TTKD, at2$status)~at2$temp) 
+ggsurvplot(fit = at2sf, data = at2, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata") +
+  labs(Title = "Survival Rate with carbaryl")
+```
+
+#Pesticide = atrazine
+```{r}
+at3 = ds %>%
+  filter(pesticide == "atrazine")
+
+at3sf = survfit(Surv(at3$TTKD, at3$status)~at3$temp) 
+ggsurvplot(fit = at3sf, data = at3, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata") +
+  labs(Title = "Survival Rate with atrazine")
+```
 
