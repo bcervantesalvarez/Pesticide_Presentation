@@ -52,6 +52,8 @@ at1 = ds %>%
 at1sf = survfit(Surv(at1$TTKD, at1$status)~at1$temp) 
 ggsurvplot(fit = at1sf, data = at1, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata") +
   labs(Title = "Survival Rate with Pesticide azoxystrobin")
+
+survdiff(Surv(at1$TTKD, at1$status)~at1$temp)
 ```
 #Pesticide = carbaryl
 ```{r}
@@ -61,6 +63,8 @@ at2 = ds %>%
 at2sf = survfit(Surv(at2$TTKD, at2$status)~at2$temp) 
 ggsurvplot(fit = at2sf, data = at2, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata") +
   labs(Title = "Survival Rate with carbaryl")
+
+survdiff(Surv(at2$TTKD, at2$status)~at2$temp)
 ```
 
 #Pesticide = atrazine
@@ -71,5 +75,10 @@ at3 = ds %>%
 at3sf = survfit(Surv(at3$TTKD, at3$status)~at3$temp) 
 ggsurvplot(fit = at3sf, data = at3, legend = "bottom", risk.table = F, conf.int=F,linetype = "strata") +
   labs(Title = "Survival Rate with atrazine")
+
+survdiff(Surv(at3$TTKD, at3$status)~at3$temp)
+```
+```{r}
+
 ```
 
