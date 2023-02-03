@@ -1,0 +1,50 @@
+---
+title: "Background"
+format: html
+editor: visual
+---
+
+## Assignment Prompt
+
+(For each of the 3 pesticides) Did the time to death of the tadpoles differ significantly by temperature? 
+
+## Assignment abstract
+
+Global climate change is predicted to have significant impacts on ecological interactions such as host-parasite relationships. Increased temperatures may also interact with other anthropogenic stressors, such as chemical contaminants, to exacerbate or reduce parasite transmission. However, studies on the effects of pesticides on non-target species are typically conducted at one standard temperature, despite the toxicity of many agrochemicals being temperature-dependent. Furthermore, most studies assessing the effects of temperature on pesticide toxicity have been conducted on host organisms, limiting our understanding of how temperature affects the toxicity of pesticides to free-living parasite stages as they move through the environment in search of a host. Using the free-swimming cercariae stage of the trematode Echinostoma trivolvis \[not important\...just google a picture of the parasite and don't waste too much time with it\], researchers examined how the toxicities of three different pesticides (a carbamate insecticide, strobilurin fungicide, and triazine herbicide) vary by temperature by monitoring cercarial swimming activity over time.
+
+## **Data source**
+
+https://purr.purdue.edu/publications/3933/1
+
+## Abstract
+
+Global climate change is predicted to have significant impacts on ecological interactions such as host-parasite relationships. Increased temperatures may also interact with other anthropogenic stressors, such as chemical contaminants, to exacerbate or reduce parasite transmission. However, studies on the effects of pesticides on non-target species are typically conducted at one standard temperature, despite the toxicity of many agrochemicals being temperature-dependent. Furthermore, most studies assessing the effects of temperature on pesticide toxicity have been conducted on host organisms, limiting our understanding of how temperature affects the toxicity of pesticides to free-living parasite stages as they move through the environment in search of a host. Using the free-swimming cercariae stage of the trematode *Echinostoma trivolvis*, we examined how the toxicities of three different pesticides (a carbamate insecticide, strobilurin fungicide, and triazine herbicide) vary by temperature by monitoring cercarial swimming activity over time. Our three main findings were: 1) a strong main effect of temperature across all pesticide trials -- higher temperatures caused cercariae to cease swimming activity earlier, likely due to an increased rate of energy expenditure, 2) atrazine, azoxystrobin, and carbaryl were directly toxic to cercariae to some degree, but not in a predictable dose-dependent manner, and 3) the temperature at which pesticide exposure occurs could affect its toxicity to cercariae. The interaction between pesticide and temperature was most evident in the azoxystrobin exposure; azoxystrobin caused cercariae to cease swimming activity earlier at 30 °C but caused cercariae to maintain swimming activity longer at 18 °C relative to their respective pesticide-free control treatments. These findings highlight the importance of conducting toxicity assays at multiple temperatures and suggest that the combined effects of pesticides and temperature on host-parasite interactions may be difficult to generalize.\
+
+## About the parasite
+
+While largely unexplored empirically, parasites like E. trivolvis may play important roles in regulating the abundance and distribution of particular host species. In particular, parasitism may interact with other stressors like predation or pollution (Thiemann & Wassersug, 2000). Tadpoles can differentiate between infected and uninfected snails and move away from infected snails. This helps them avoid being penetrated by cercariae that seek them out as a host. However, with the addition of a predator, tadpoles decreased their movement, and exhibited an increase in trematode infection. This has important implications when assessing increased fish (predators) introductions into ponds and lakes where snails and trematodes are present. These introductions may result in an elevation of trematode infections and thus a decrease of native amphibian populations. Pollution can also play a role in parasite-host interactions (Budischak et al. 2008). Exposure to pesticides damages the immune system, leading to an increase in susceptibility to trematode infections. Eutrophication caused by pollution stimulates snail growth and parasite prevalence within the snail. However, these snails may lack healthy immune responses to prevent parasite infection and thus become a host. This field of parasitology is important when considering global climate change, which may cause an increase in parasite numbers (stimulated by longer reproductive seasons, ideal warmer conditions, and larger habitat ranges) because of a warmer climate (Budischak et al. 2008). ([Budischak, et al., 2008](https://animaldiversity.org/accounts/Echinostoma_trivolvis/#0086e343013efb4771bad44879520c8e); [Thiemann and Wassersug, 2000](https://animaldiversity.org/accounts/Echinostoma_trivolvis/#8366f4a90acd5a1a9657553ad04b5f6d))
+
+## About the Pesticides
+
+### atrazine
+
+Atrazine is a chlorinated triazine systemic herbicide that is used to selectively control annual grasses and broadleaf weeds before they emerge. Pesticide products containing atrazine are registered for use on several agricultural crops, with the highest use on field corn, sweet corn, sorghum, and sugarcane. Additionally, atrazine products are registered for use on wheat, macadamia nuts, and guava, as well as non-agricultural uses such as nursery/ornamental and turf.
+
+### azoxystrobin			
+
+A Broad-Spectrum Fungicide for Control of a Wide-Range of Plant Diseases in Almonds, Artichoke (Globe), etc							
+
+Azoxystrobin is toxic to freshwater and estuarine/marine fish and aquatic invertebrates. Azoxystrobin can be persistent for several months or more after application. For terrestrial uses: Do not apply directly to water, or to areas where surface water is present, or to intertidal areas below the mean high water mark. Drift and runoff may be hazardous to aquatic organisms in water adjacent to treated areas. Do not contaminate water when disposing of equipment washwater or rinsate.
+			
+
+### carbaryl
+
+Carbaryl is used as an insecticide on corn, soybean, cotton, fruit, nut, and vegetable crops, as well as in home yards and gardens. Carbaryl is sold under the trade name Sevin. (1,2)
+
+Carbaryl is practically non-toxic or slightly toxic to birds, and slightly to moderately toxic to mammals. However, it is moderately to highly toxic to fish and highly toxic to earthworms and honey bees. Carbaryl is very highly toxic to shrimp, waterfleas, and stoneflies. The main breakdown product of carbaryl is also highly toxic to some fish.
+
+###  Related studies
+
+The Effect of Temperature on the Toxicity of Insecticides against *Musca domestica* L.: Implications for the Effective Management of Diarrhea
+
+\
