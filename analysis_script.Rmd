@@ -1,0 +1,42 @@
+---
+title: "DATA 599 Survival Analysis - Kaplan Meier Curves & Censoring"
+author: ""
+date: "January 19, 2023"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "C:/Users/klgor/OneDrive/Documents/Willamette University Classes/DATA 599 - Survival analysis/Survival Datasets")
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(survival)
+library(survminer)
+library(reReg)
+library(KMsurv)
+library(Ecdat)
+```
+
+```{r}
+ds=read_csv("../Datasets/pharmacoSmoking-asaur.txt")
+
+ds=ds %>%
+    select(id,grp,ageGroup2,ttr,relapse)
+
+km.strata=survfit(Surv(ds$ttr,ds$relapse)~ds$grp + strata(ds$ageGroup2))
+
+ggsurvplot(fit=km.strata, data=ds,
+           legend = "bottom", risk.table = F,conf.int=F,linetype = "strata") +
+    labs(
+        title="Survival Curve for Pharmaco Study",
+        x="Time to Relapse)"
+    ) 
+
+survdiff(Surv(ds$ttr,ds$relapse)~ds$grp + (ds$ageGroup2))
+```
+
+##
+
