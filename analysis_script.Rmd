@@ -25,14 +25,12 @@ ds = read_csv("./data/aquaticToxic.csv")
 
 ## Data Overview
 ```{r message=FALSE, warning=FALSE}
-#Pesticide Names
-unique(ds$pesticide)
-
-#Total Number of Observations
+#Number of Observations Per Pesticide
 nrow(ds)
 
-#Number of Observations Per Pesticide
-length(unique(ds$id))
+ds %>% 
+  group_by(pesticide) %>%
+  summarise(observations = n())
 
 ```
 ## 
@@ -54,7 +52,7 @@ at1sf = survfit(Surv(at1$TTKD, at1$status)~at1$temp)
 
 ggsurvplot(fit = at1sf, 
            data = at1, 
-           legend = "bottom", 
+           legend = "bottom",
            risk.table = F, 
            conf.int = F,
            linetype = "strata") +
