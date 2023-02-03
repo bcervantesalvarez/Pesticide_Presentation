@@ -78,7 +78,36 @@ ggsurvplot(fit = at3sf, data = at3, legend = "bottom", risk.table = F, conf.int=
 
 survdiff(Surv(at3$TTKD, at3$status)~at3$temp)
 ```
+##Temperature Analysis
+#Temp = 18
 ```{r}
+temp18 = ds %>%
+  filter(temp == 18)
 
+ggsurvplot(fit= survfit(Surv(temp18$TTKD, temp18$status)~temp18$pesticide), data = temp18) +
+  labs(Title = "Survival Plot Temperature is 18")
+
+survdiff(Surv(temp18$TTKD, temp18$status)~temp18$pesticide)
+```
+#Temp = 24
+```{r}
+temp24 = ds %>%
+  filter(temp == 24)
+
+ggsurvplot(fit= survfit(Surv(temp24$TTKD, temp24$status)~temp24$pesticide), data = temp24) +
+  labs(Title = "Survival Plot Temperature is 24")
+
+survdiff(Surv(temp24$TTKD, temp24$status)~temp24$pesticide)
+```
+
+#Temp = 30 
+```{r}
+temp30 = ds %>%
+  filter(temp == 30)
+
+ggsurvplot(fit= survfit(Surv(temp30$TTKD, temp30$status)~temp30$pesticide), data = temp30) +
+  labs(Title = "Survival Plot Temperature is 30")
+
+survdiff(Surv(temp30$TTKD, temp30$status)~temp30$pesticide)
 ```
 
