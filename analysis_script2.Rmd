@@ -1,0 +1,138 @@
+---
+title: "DATA 599 Survival Analysis - Kaplan Meier Curves & Censoring"
+author: ""
+date: "January 19, 2023"
+output: html_document
+theme: flatly
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "./data")
+library(wesanderson)
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(survival)
+library(survminer)
+library(reReg)
+library(KMsurv)
+library(Ecdat)
+
+ds=read_csv("./data/aquaticToxic.csv")
+pal = wes_palette(n=3, name="FantasticFox1")
+```
+
+## KM Survival Curves for Pesticides 
+
+#Pesticide = azoxystrobin
+```{r}
+at1 = ds %>% 
+  filter(pesticide == "azoxystrobin")
+```
+
+```{r}
+at1sf = survfit(Surv(at1$TTKD, at1$status)~at1$temp) 
+ggsurvplot(fit = at1sf, data = at1, palette = pal, legend = "bottom", legend.labs = c("18°C","24°C", "30°C"), risk.table = F, conf.int=F, surv.median.line="hv") +
+  labs(title = "Survival Rate with Pesticide azoxystrobin", x = "Time in Hours") 
+```
+
+#Pesticide = carbaryl
+```{r}
+at2 = ds %>%
+  filter(pesticide == "carbaryl")
+
+at2sf = survfit(Surv(at2$TTKD, at2$status)~at2$temp) 
+ggsurvplot(fit = at2sf, data = at2, palette = pal, legend = "bottom", legend.labs = c("18°C","24°C", "30°C"),risk.table = F, conf.int=F, surv.median.line="hv") +
+  labs(title = "Survival Rate with carbaryl", 
+       x = "Time in Hours")
+
+survdiff(Surv(at2$TTKD, at2$status)~at2$temp)
+```
+
+#Pesticide = atrazine
+```{r}
+at3 = ds %>%
+  filter(pesticide == "atrazine")
+
+at3sf = survfit(Surv(at3$TTKD, at3$status)~at3$temp) 
+ggsurvplot(fit = at3sf, data = at3, legend = "bottom", palette = pal, risk.table = F, legend.labs = c("18°C","24°C", "30°C"), conf.int=F, surv.median.line="hv") +
+  labs(title = "Survival Rate with Atrazine", 
+       x = "Time in Hours")
+
+survdiff(Surv(at3$TTKD, at3$status)~at3$temp)
+```
+##Temperature Analysis
+#Temp = 18
+```{r}
+temp18 = ds %>%
+  filter(temp == 18)
+
+ggsurvplot(fit= survfit(Surv(temp18$TTKD, temp18$status)~temp18$pesticide),palette = pal, legend.labs = c("Atrazine","Azoxystrobin", "Carbaryl"),data = temp18, surv.median.line="hv") +
+  labs(title = "Survival Plot Temperature is 18 degrees Celsius", 
+       x = "Time in Hours")
+
+survdiff(Surv(temp18$TTKD, temp18$status)~temp18$pesticide)
+```
+
+#Temp = 24
+```{r}
+temp24 = ds %>%
+  filter(temp == 24)
+
+ggsurvplot(fit= survfit(Surv(temp24$TTKD, temp24$status)~temp24$pesticide), legend.labs = c("Atrazine","Azoxystrobin", "Carbaryl"), palette = pal, data = temp24, surv.median.line="hv") +
+  labs(title = "Survival Plot Temperature is 24 degrees Celsius", 
+       x = "Time in Hours")
+
+survdiff(Surv(temp24$TTKD, temp24$status)~temp24$pesticide)
+```
+
+#Temp = 30 
+```{r}
+temp30 = ds %>%
+  filter(temp == 30)
+
+ggsurvplot(fit= survfit(Surv(temp30$TTKD, temp30$status)~temp30$pesticide),palette = pal,legend.labs = c("Atrazine","Azoxystrobin", "Carbaryl"),  data = temp30, surv.median.line="hv") +
+  labs(title = "Survival Plot Temperature is 30 degrees Celsius", 
+       x = "Time in Hours")
+
+survdiff(Surv(temp30$TTKD, temp30$status)~temp30$pesticide)
+```
+```{r}
+ncdc0 = ds %>% 
+  filter(detected_conc== 0) 
+
+ggsurvplot(fit= survfit(Surv(ncdc0$TTKD, ncdc0$status)~ ncdc0$temp), data = ncdc0, surv.median.line="hv") +
+  labs(Title = "Survival Plot Detected Concentration Zero", 
+       x = "Time in Hours")
+
+survdiff(Surv(ncdc0$TTKD, ncdc0$status)~ncdc0$temp)
+```
+
+```{r}
+ds %>%
+  group_by(temp) %>%
+  summarize(min_dc = min(detected_conc), median_dc = median(detected_conc), max_dc = max(detected_conc), min_nc = min(nominal_conc), median_nc = median(nominal_conc), max_nc = max(nominal_conc))
+```
+```{r}
+ds %>%
+  group_by(detected_conc) %>%
+  summarize(count = n())
+```
+```{r}
+ds = ds %>%
+  mutate(cd_f = case_when(
+    detected_conc < 10 ~ "low",
+    detected_conc >= 10 & detected_conc < 100 ~ "medium",
+    detected_conc >= 100 & detected_conc < 500  ~ "high",
+    detected_conc >= 500 ~ "very high"
+  ))
+```
+
+```{r}
+ggsurvplot(fit= survfit(Surv(ds$TTKD, ds$status)~ ds$cd_f), data = ds, surv.median.line="hv") 
+
+survdiff(Surv(ds$TTKD, ds$status)~ds$cd_f)
+```
+
