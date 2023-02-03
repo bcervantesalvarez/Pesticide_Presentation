@@ -1,6 +1,6 @@
 ---
-title: "DATA 599 Survival Analysis - Kaplan Meier Curves & Censoring"
-author: ""
+title: "Group Project Analysis "
+author: "Willa, Hans, Brian"
 date: "January 19, 2023"
 output: html_document
 theme: flatly
