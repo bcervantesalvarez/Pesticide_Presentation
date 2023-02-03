@@ -38,18 +38,8 @@ length(unique(ds$id))
 ## 
 
 ```{r message=FALSE, warning=FALSE}
-#Pesticide Names
-unique(ds$pesticide)
-
-#Total Number of Observations
-nrow(ds)
-
-#Number of Observations Per Pesticide
-length(unique(ds$id))
 
 ```
-
-
 
 ## KM Survival Curves for Pesticides 
 
