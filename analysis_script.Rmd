@@ -32,6 +32,17 @@ ds %>%
   group_by(pesticide) %>%
   summarise(observations = n())
 
+
+ds %>% 
+  group_by(block, detected_conc) %>%
+  summarize(count = n()) %>%
+  ggplot(aes(x = detected_conc)) +
+  geom_density(fill = "black") +
+  labs(title = "Density Plot of the Detected Concentration per Temperature Block") + 
+  facet_wrap(~block) +
+  theme_classic() 
+  
+
 ```
 ## 
 

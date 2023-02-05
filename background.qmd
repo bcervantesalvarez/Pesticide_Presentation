@@ -8,6 +8,46 @@ editor: visual
 
 (For each of the 3 pesticides) Did the time to death of the tadpoles differ significantly by temperature? 
 
+### What is the topic?
+
+A group of researchers tested the toxicities of 3 pesticides on parasites, in 3 different temperatures, and determined that temperature affected the time of death for those par. 
+
+
+I am a "scientist" that wants to take a quick swim.
+
+Woah. Parasitical tadpoles are in my pool. Oh no, now I have Cercarial Dermatitis :(
+
+What can I do to avoid Cercarial Dermatitis next time?!?
+
+
+### Background
+
+
+
+
+
+**ANSWER:** To never swim again.
+
+But let's say you like swimming in the 21st Century.
+
+How do I get rid of those meddling tadpoles, RIGHT NOW? Remember Climate Change...never forget about climate change.
+
+\[Insert Unskippable Ad\] There are 3 pesticides we can use:
+
+-   atrazine AKA Pest_1
+
+-   azoxystrobin AKA Pest_2
+
+-   carbaryl AKA Pest_3
+
+I want to use them in 3 temperature settings:
+
+-   Below room temperature (18 Celsius \| 64.4 Fahrenheit )
+-   Above room temperature (24 Celsius \| 75.2 Fahrenheit)
+-   Beach temperature (30 Celsius \| 86 Fahrenheit )
+
+What does it explore?
+
 ## Assignment abstract
 
 Global climate change is predicted to have significant impacts on ecological interactions such as host-parasite relationships. Increased temperatures may also interact with other anthropogenic stressors, such as chemical contaminants, to exacerbate or reduce parasite transmission. However, studies on the effects of pesticides on non-target species are typically conducted at one standard temperature, despite the toxicity of many agrochemicals being temperature-dependent. Furthermore, most studies assessing the effects of temperature on pesticide toxicity have been conducted on host organisms, limiting our understanding of how temperature affects the toxicity of pesticides to free-living parasite stages as they move through the environment in search of a host. Using the free-swimming cercariae stage of the trematode Echinostoma trivolvis \[not important\...just google a picture of the parasite and don't waste too much time with it\], researchers examined how the toxicities of three different pesticides (a carbamate insecticide, strobilurin fungicide, and triazine herbicide) vary by temperature by monitoring cercarial swimming activity over time.
@@ -30,12 +70,11 @@ While largely unexplored empirically, parasites like E. trivolvis may play imp
 
 Atrazine is a chlorinated triazine systemic herbicide that is used to selectively control annual grasses and broadleaf weeds before they emerge. Pesticide products containing atrazine are registered for use on several agricultural crops, with the highest use on field corn, sweet corn, sorghum, and sugarcane. Additionally, atrazine products are registered for use on wheat, macadamia nuts, and guava, as well as non-agricultural uses such as nursery/ornamental and turf.
 
-### azoxystrobin			
+### azoxystrobin
 
-A Broad-Spectrum Fungicide for Control of a Wide-Range of Plant Diseases in Almonds, Artichoke (Globe), etc							
+A Broad-Spectrum Fungicide for Control of a Wide-Range of Plant Diseases in Almonds, Artichoke (Globe), etc
 
 Azoxystrobin is toxic to freshwater and estuarine/marine fish and aquatic invertebrates. Azoxystrobin can be persistent for several months or more after application. For terrestrial uses: Do not apply directly to water, or to areas where surface water is present, or to intertidal areas below the mean high water mark. Drift and runoff may be hazardous to aquatic organisms in water adjacent to treated areas. Do not contaminate water when disposing of equipment washwater or rinsate.
-			
 
 ### carbaryl
 
@@ -43,7 +82,7 @@ Carbaryl is used as an insecticide on corn, soybean, cotton, fruit, nut, and veg
 
 Carbaryl is practically non-toxic or slightly toxic to birds, and slightly to moderately toxic to mammals. However, it is moderately to highly toxic to fish and highly toxic to earthworms and honey bees. Carbaryl is very highly toxic to shrimp, waterfleas, and stoneflies. The main breakdown product of carbaryl is also highly toxic to some fish.
 
-###  Related studies
+### Related studies
 
 The Effect of Temperature on the Toxicity of Insecticides against *Musca domestica* L.: Implications for the Effective Management of Diarrhea
 
