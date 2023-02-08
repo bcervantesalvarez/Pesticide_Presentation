@@ -37,6 +37,7 @@ at1sf = survfit(Surv(at1$TTKD, at1$status)~at1$temp)
 azoxystrobin = ggsurvplot(fit = at1sf, data = at1, palette = pal, legend = "bottom", legend.labs = c("18°C","24°C", "30°C"), risk.table = F, conf.int=F, surv.median.line="hv") +
   labs(title = "Survival Rate with Pesticide Azoxystrobin", x = "Time in Hours") 
 ggsave("azoxystrobin.pdf", width = 10, height=7)
+ggsave("azoxystrobin.jpg", width = 10, height=7)
 survdiff(Surv(at1$TTKD, at1$status)~at1$temp)
 ```
 
@@ -50,6 +51,7 @@ carbaryl = ggsurvplot(fit = at2sf, data = at2, palette = pal, legend = "bottom",
   labs(title = "Survival Rate with Carbaryl", 
        x = "Time in Hours")
 ggsave("carbaryl.pdf", width = 10, height=7)
+ggsave("carbaryl.jpg", width = 10, height=7)
 survdiff(Surv(at2$TTKD, at2$status)~at2$temp)
 ```
 
@@ -63,6 +65,7 @@ atrazine = ggsurvplot(fit = at3sf, data = at3, legend = "bottom", palette = pal,
   labs(title = "Survival Rate with Atrazine", 
        x = "Time in Hours")
 ggsave("atrazine.pdf", width = 10, height=7)
+ggsave("atrazine.jpg", width = 10, height=7)
 survdiff(Surv(at3$TTKD, at3$status)~at3$temp)
 ```
 ##Temperature Analysis
@@ -75,6 +78,7 @@ tempurate18 = ggsurvplot(fit= survfit(Surv(temp18$TTKD, temp18$status)~temp18$pe
   labs(title = "Survival Plot Temperature is 18 degrees Celsius", 
        x = "Time in Hours")
 ggsave("temperature18.pdf", width = 10, height=7)
+ggsave("tempurature30.jpg", width = 10, height=7)
 survdiff(Surv(temp18$TTKD, temp18$status)~temp18$pesticide)
 ```
 
@@ -87,6 +91,7 @@ tempurature24 = ggsurvplot(fit= survfit(Surv(temp24$TTKD, temp24$status)~temp24$
   labs(title = "Survival Plot Temperature is 24 degrees Celsius", 
        x = "Time in Hours")
 ggsave("tempurature24.pdf", width = 10, height=7)
+ggsave("tempurature24.jpg", width = 10, height=7)
 survdiff(Surv(temp24$TTKD, temp24$status)~temp24$pesticide)
 ```
 
@@ -99,6 +104,7 @@ tempurature30= ggsurvplot(fit= survfit(Surv(temp30$TTKD, temp30$status)~temp30$p
   labs(title = "Survival Plot Temperature is 30 degrees Celsius", 
        x = "Time in Hours")
 ggsave("tempurature30.pdf", width = 10, height=7)
+ggsave("tempurature30.jpg", width = 10, height=7)
 survdiff(Surv(temp30$TTKD, temp30$status)~temp30$pesticide)
 ```
 ```{r}
